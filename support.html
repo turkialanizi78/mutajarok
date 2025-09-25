@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الدعم الفني - CodeBH | متجرك</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Tajawal", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #333;
+        line-height: 1.8;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 3px solid #4a6cf7;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 28px;
+        font-weight: 900;
+        color: #4a6cf7;
+      }
+
+      .logo i {
+        font-size: 32px;
+        background: linear-gradient(45deg, #4a6cf7, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      nav {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      nav a:hover {
+        background: #4a6cf7;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      nav a.active {
+        background: #4a6cf7;
+        color: white;
+      }
+
+      /* Main Content */
+      main {
+        margin: 40px auto;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="25" cy="75" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        animation: float 20s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      .hero-section h1 {
+        font-size: 48px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-section p {
+        font-size: 20px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 32px;
+        font-weight: 900;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      .content-area {
+        padding: 60px 40px;
+      }
+
+      /* Quick Help Cards */
+      .quick-help {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .help-card {
+        background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        border: 1px solid #e0e7ff;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .help-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .help-card i {
+        font-size: 48px;
+        background: linear-gradient(45deg, #4a6cf7, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .help-card h3 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .help-card p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .help-card .btn {
+        background: linear-gradient(45deg, #4a6cf7, #764ba2);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .help-card .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(74, 108, 247, 0.4);
+      }
+
+      /* Support Sections */
+      .support-section {
+        margin-bottom: 50px;
+        padding: 40px;
+        background: #fdfdfd;
+        border-radius: 15px;
+        border: 1px solid #f0f0f0;
+      }
+
+      .support-section h2 {
+        color: #4a6cf7;
+        font-size: 32px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e0e7ff;
+      }
+
+      .support-section h3 {
+        color: #333;
+        font-size: 24px;
+        margin: 30px 0 15px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .support-section h4 {
+        color: #555;
+        font-size: 20px;
+        margin: 20px 0 10px 0;
+        font-weight: 600;
+      }
+
+      .support-section p {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #555;
+      }
+
+      .support-section ul,
+      .support-section ol {
+        margin: 15px 0 15px 30px;
+      }
+
+      .support-section li {
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      /* Contact Methods */
+      .contact-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin: 30px 0;
+      }
+
+      .contact-method {
+        background: linear-gradient(135deg, #fff, #f8faff);
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid #e0e7ff;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .contact-method:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .contact-method i {
+        font-size: 36px;
+        color: #4a6cf7;
+        margin-bottom: 15px;
+      }
+
+      .contact-method h4 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .contact-method a {
+        color: #4a6cf7;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-method a:hover {
+        text-decoration: underline;
+      }
+
+      /* FAQ Section */
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #e0e7ff;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .faq-question {
+        background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        color: #333;
+        border: none;
+        width: 100%;
+        text-align: right;
+      }
+
+      .faq-question:hover {
+        background: linear-gradient(135deg, #e8f2ff, #dce7ff);
+      }
+
+      .faq-question i {
+        color: #4a6cf7;
+        font-size: 18px;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-question.active i {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .faq-answer.active {
+        padding: 20px;
+        max-height: 500px;
+      }
+
+      /* Alert Boxes */
+      .alert {
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .alert.info {
+        background: linear-gradient(135deg, #d1ecf1, #b8daff);
+        border: 1px solid #17a2b8;
+        color: #0c5460;
+      }
+
+      .alert.success {
+        background: linear-gradient(135deg, #d4edda, #c3e6cb);
+        border: 1px solid #28a745;
+        color: #155724;
+      }
+
+      .alert.warning {
+        background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+        border: 1px solid #ffc107;
+        color: #856404;
+      }
+
+      .alert i {
+        font-size: 20px;
+        margin-top: 2px;
+      }
+
+      /* Ticket System */
+      .ticket-form {
+        background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+        padding: 40px;
+        border-radius: 15px;
+        margin: 30px 0;
+        border: 1px solid #e0e7ff;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #4a6cf7;
+        box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+      }
+
+      .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: linear-gradient(45deg, #4a6cf7, #764ba2);
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(74, 108, 247, 0.4);
+      }
+
+      /* Operating Hours */
+      .hours-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .hours-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #e0e7ff;
+        text-align: center;
+      }
+
+      .hours-card h4 {
+        color: #4a6cf7;
+        margin-bottom: 10px;
+      }
+
+      .hours-card .time {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .hours-card .status {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      .status.open {
+        color: #28a745;
+      }
+
+      .status.closed {
+        color: #dc3545;
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        color: white;
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 0;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 15px;
+        color: #4a6cf7;
+        font-size: 18px;
+      }
+
+      .footer-section a {
+        color: #bdc3c7;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 8px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: #4a6cf7;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #34495e;
+        padding-top: 20px;
+        color: #bdc3c7;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        nav {
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero-section h1 {
+          font-size: 32px;
+        }
+
+        .hero-section p {
+          font-size: 16px;
+        }
+
+        .content-area {
+          padding: 40px 20px;
+        }
+
+        .support-section {
+          padding: 20px;
+        }
+
+        .quick-help {
+          grid-template-columns: 1fr;
+        }
+
+        .ticket-form {
+          padding: 20px;
+        }
+      }
+
+      /* Animations */
+      .support-section {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .support-section:nth-child(even) {
+        animation-delay: 0.1s;
+      }
+
+      .support-section:nth-child(odd) {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-store"></i>
+            <span>CodeBH</span>
+          </div>
+          <nav>
+            <a href="index.html"
+              ><i class="fas fa-hotel"></i> الرئيسية</a
+            >
+            <a href="privacy.html"
+              ><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a
+            >
+            <a href="terms.html"
+              ><i class="fas fa-file-contract"></i> شروط الاستخدام</a
+            >
+            <a href="support.html" class="active"
+              ><i class="fas fa-headset"></i> الدعم الفني</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <main>
+        <div class="hero-section">
+          <h1>مركز الدعم الفني</h1>
+          <p>
+            نحن هنا لمساعدتك على مدار الساعة. فريقنا المتخصص جاهز لحل جميع
+            استفساراتك ومشاكلك التقنية
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">دعم مستمر</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">&lt;30</span>
+              <span class="stat-label">دقيقة استجابة</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">نسبة رضا العملاء</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">+5000</span>
+              <span class="stat-label">مشكلة تم حلها</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-area">
+          <!-- Quick Help Cards -->
+          <div class="quick-help">
+            <div class="help-card" onclick="location.href='#merchant-support'">
+              <i class="fas fa-store"></i>
+              <h3>دعم التجار</h3>
+              <p>مساعدة في إنشاء المتاجر، إدارة المنتجات، والاشتراكات</p>
+              <a href="#merchant-support" class="btn">احصل على المساعدة</a>
+            </div>
+
+            <div class="help-card" onclick="location.href='#customer-support'">
+              <i class="fas fa-shopping-cart"></i>
+              <h3>دعم العملاء</h3>
+              <p>مساعدة في التسوق، الطلبات، والدفع</p>
+              <a href="#customer-support" class="btn">تواصل معنا</a>
+            </div>
+
+            <div class="help-card" onclick="location.href='#technical-support'">
+              <i class="fas fa-cogs"></i>
+              <h3>الدعم التقني</h3>
+              <p>حل المشاكل التقنية وأخطاء التطبيق</p>
+              <a href="#technical-support" class="btn">بلغ عن مشكلة</a>
+            </div>
+          </div>
+
+          <!-- Contact Methods -->
+          <section class="support-section">
+            <h2><i class="fas fa-phone"></i> طرق التواصل</h2>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <h4>البريد الإلكتروني</h4>
+                <p>للاستفسارات العامة والدعم</p>
+                <a href="mailto:support@mutajarok.com">support@mutajarok.com</a>
+              </div>
+
+              <div class="contact-method">
+                <i class="fas fa-user-tie"></i>
+                <h4>دعم التجار</h4>
+                <p>للتجار وأصحاب المتاجر</p>
+                <a href="mailto:merchants@mutajarok.com"
+                  >merchants@mutajarok.com</a
+                >
+              </div>
+
+              <div class="contact-method">
+                <i class="fas fa-bug"></i>
+                <h4>الأخطاء التقنية</h4>
+                <p>للإبلاغ عن الأخطاء والمشاكل</p>
+                <a href="mailto:bugs@mutajarok.com">bugs@mutajarok.com</a>
+              </div>
+
+              <div class="contact-method">
+                <i class="fas fa-lightbulb"></i>
+                <h4>الاقتراحات</h4>
+                <p>شاركنا أفكارك لتطوير المنصة</p>
+                <a href="mailto:suggestions@mutajarok.com"
+                  >suggestions@mutajarok.com</a
+                >
+              </div>
+            </div>
+
+            <div class="alert info">
+              <i class="fas fa-info-circle"></i>
+              <div>
+                <strong>نصيحة:</strong> لضمان سرعة الاستجابة، يرجى تضمين رقم
+                المتجر أو رقم الطلب في رسالتك.
+              </div>
+            </div>
+          </section>
+
+          <!-- Operating Hours -->
+          <section class="support-section">
+            <h2><i class="fas fa-clock"></i> ساعات العمل</h2>
+
+            <div class="hours-grid">
+              <div class="hours-card">
+                <h4>الدعم العام</h4>
+                <div class="time">الأحد - الخميس<br />9:00 ص - 9:00 م</div>
+                <div class="status open">مفتوح الآن</div>
+              </div>
+
+              <div class="hours-card">
+                <h4>دعم التجار</h4>
+                <div class="time">السبت - الخميس<br />8:00 ص - 10:00 م</div>
+                <div class="status open">متاح</div>
+              </div>
+
+              <div class="hours-card">
+                <h4>الطوارئ التقنية</h4>
+                <div class="time">24/7<br />على مدار الساعة</div>
+                <div class="status open">دائماً متاح</div>
+              </div>
+
+              <div class="hours-card">
+                <h4>الجمعة</h4>
+                <div class="time">2:00 م - 9:00 م<br />دعم محدود</div>
+                <div class="status open">متاح جزئياً</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Merchant Support -->
+          <section id="merchant-support" class="support-section">
+            <h2><i class="fas fa-store"></i> دعم التجار</h2>
+
+            <div class="alert success">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>مرحباً بك!</strong> نحن نقدر ثقتك في منصتنا ونسعى لتوفير
+                أفضل دعم لنجاح متجرك.
+              </div>
+            </div>
+
+            <h3><i class="fas fa-user-plus"></i> الاشتراك وإنشاء المتجر</h3>
+            <h4>خطوات الاشتراك:</h4>
+            <ol>
+              <li>
+                <strong>التسجيل:</strong> أنشئ حسابك من خلال التطبيق مع تقديم
+                المعلومات المطلوبة
+              </li>
+              <li>
+                <strong>اختيار الباقة:</strong> حدد الباقة المناسبة (أساسية أو
+                متقدمة)
+              </li>
+              <li>
+                <strong>إرسال الطلب:</strong> أرسل طلب الاشتراك مع الوثائق
+                المطلوبة
+              </li>
+              <li>
+                <strong>المراجعة:</strong> انتظار الموافقة من فريق المراجعة (1-3
+                أيام)
+              </li>
+              <li>
+                <strong>التفعيل:</strong> بعد الدفع، سيتم تفعيل متجرك خلال 24
+                ساعة
+              </li>
+            </ol>
+
+            <h4>المستندات المطلوبة:</h4>
+            <ul>
+              <li>صورة من الهوية الشخصية أو جواز السفر</li>
+              <li>السجل التجاري (للشركات)</li>
+              <li>إثبات العنوان</li>
+              <li>صور عينات من المنتجات المراد بيعها</li>
+              <li>تفاصيل الحساب البنكي للتحويلات</li>
+            </ul>
+
+            <h3><i class="fas fa-cog"></i> إدارة المتجر</h3>
+            <h4>تخصيص المتجر:</h4>
+            <ul>
+              <li>
+                <strong>الشعار والألوان:</strong> رفع شعار المتجر وتخصيص الألوان
+                حسب هويتك البصرية
+              </li>
+              <li>
+                <strong>معلومات المتجر:</strong> إضافة وصف المتجر، ساعات العمل،
+                ومعلومات التواصل
+              </li>
+              <li>
+                <strong>فئات المنتجات:</strong> إنشاء تصنيفات مخصصة للمنتجات
+              </li>
+              <li>
+                <strong>طرق الدفع:</strong> تفعيل الطرق المناسبة (دفع عند
+                الاستلام، تحويل بنكي، بوابات دفع)
+              </li>
+              <li>
+                <strong>مناطق التوصيل:</strong> تحديد المناطق المدعومة ورسوم
+                التوصيل
+              </li>
+            </ul>
+
+            <h4>إدارة المنتجات:</h4>
+            <ul>
+              <li>
+                <strong>إضافة المنتجات:</strong> رفع صور عالية الجودة مع وصف
+                مفصل
+              </li>
+              <li>
+                <strong>إدارة المخزون:</strong> تتبع الكميات والحصول على تنبيهات
+                النفاد
+              </li>
+              <li><strong>التسعير:</strong> تحديد أسعار المنتجات والخصومات</li>
+              <li><strong>العروض:</strong> إنشاء عروض خاصة وكوبونات الخصم</li>
+              <li>
+                <strong>التقييمات:</strong> مراقبة تقييمات العملاء والرد عليها
+              </li>
+            </ul>
+
+            <h3><i class="fas fa-shipping-fast"></i> معالجة الطلبات</h3>
+            <h4>سير العمل:</h4>
+            <ol>
+              <li>
+                <strong>استلام الطلب:</strong> ستصلك إشعارات فورية بالطلبات
+                الجديدة
+              </li>
+              <li>
+                <strong>تأكيد الطلب:</strong> راجع تفاصيل الطلب وأكده خلال 2
+                ساعة
+              </li>
+              <li><strong>تحضير الطلب:</strong> جهز المنتجات وغلفها بعناية</li>
+              <li>
+                <strong>الشحن:</strong> سلم الطلب لشركة التوصيل أو وصله بنفسك
+              </li>
+              <li><strong>التتبع:</strong> حدث حالة الطلب للعميل</li>
+              <li>
+                <strong>التسليم:</strong> تأكد من وصول الطلب وتأكيد الاستلام
+              </li>
+            </ol>
+
+            <h4>المدد الزمنية الموصى بها:</h4>
+            <ul>
+              <li><strong>تأكيد الطلب:</strong> خلال 2 ساعة</li>
+              <li><strong>تحضير الطلب:</strong> 24-48 ساعة</li>
+              <li><strong>التوصيل:</strong> حسب المنطقة (1-5 أيام)</li>
+              <li><strong>رد العملاء:</strong> خلال 4 ساعات</li>
+            </ul>
+
+            <h3><i class="fas fa-credit-card"></i> طرق الدفع والتكاملات</h3>
+
+            <h4>الطرق الافتراضية:</h4>
+            <ul>
+              <li>
+                <strong>الدفع عند الاستلام:</strong> متاح تلقائياً لجميع المتاجر
+              </li>
+              <li>
+                <strong>التحويل البنكي:</strong> العميل يحول ويرفع إثبات الدفع
+              </li>
+            </ul>
+
+            <h4>البوابات الاختيارية:</h4>
+            <ul>
+              <li>
+                <strong>PayTabs:</strong> احصل على حساب PayTabs وأدخل مفاتيح API
+              </li>
+              <li><strong>Stripe:</strong> افتح حساب Stripe وقم بالربط</li>
+              <li>
+                <strong>بوابات أخرى:</strong> تواصل معنا لإضافة بوابات دفع
+                إضافية
+              </li>
+            </ul>
+
+            <div class="alert warning">
+              <i class="fas fa-exclamation-triangle"></i>
+              <div>
+                <strong>مهم:</strong> يجب أن تمتلك حساباً نشطاً في بوابة الدفع
+                قبل ربطها بمتجرك. نحن نوفر الربط التقني فقط.
+              </div>
+            </div>
+
+            <h3><i class="fas fa-chart-bar"></i> التقارير والإحصائيات</h3>
+            <h4>التقارير المتاحة:</h4>
+            <ul>
+              <li><strong>تقرير المبيعات:</strong> يومي، أسبوعي، شهري</li>
+              <li>
+                <strong>أفضل المنتجات:</strong> الأكثر مبيعاً والأعلى تقييماً
+              </li>
+              <li><strong>تحليل العملاء:</strong> العملاء الجدد والمتكررون</li>
+              <li>
+                <strong>تقرير المخزون:</strong> المنتجات المنخفضة والنافدة
+              </li>
+              <li><strong>الأداء المالي:</strong> الإيرادات والأرباح</li>
+            </ul>
+
+            <h3>
+              <i class="fas fa-question-circle"></i> المشاكل الشائعة للتجار
+            </h3>
+
+            <h4>مشكلة: لا أستطيع رفع صور المنتجات</h4>
+            <p><strong>الحل:</strong></p>
+            <ul>
+              <li>تأكد من أن حجم الصورة لا يزيد عن 5 ميجابايت</li>
+              <li>استخدم صيغ مدعومة: JPG, PNG, WebP</li>
+              <li>تأكد من اتصال الإنترنت</li>
+              <li>جرب إعادة تشغيل التطبيق</li>
+            </ul>
+
+            <h4>مشكلة: لم أستلم إشعار بطلب جديد</h4>
+            <p><strong>الحل:</strong></p>
+            <ul>
+              <li>تحقق من إعدادات الإشعارات في التطبيق</li>
+              <li>تأكد من تفعيل الإشعارات في إعدادات الهاتف</li>
+              <li>راجع قسم "الطلبات" في التطبيق</li>
+              <li>تحقق من البريد الإلكتروني</li>
+            </ul>
+
+            <h4>مشكلة: العميل يشكو من عدم عمل كوبون الخصم</h4>
+            <p><strong>الحل:</strong></p>
+            <ul>
+              <li>تأكد من صحة رمز الكوبون</li>
+              <li>راجع تاريخ انتهاء الكوبون</li>
+              <li>تحقق من شروط استخدام الكوبون (حد أدنى للطلب)</li>
+              <li>تأكد من أن الكوبون متاح للمنتجات في السلة</li>
+            </ul>
+          </section>
+
+          <!-- Customer Support -->
+          <section id="customer-support" class="support-section">
+            <h2><i class="fas fa-shopping-cart"></i> دعم العملاء</h2>
+
+            <div class="alert info">
+              <i class="fas fa-heart"></i>
+              <div>
+                <strong>مرحباً بك!</strong> نحن ملتزمون بتوفير تجربة تسوق ممتازة
+                ومساعدتك في كل خطوة.
+              </div>
+            </div>
+
+            <h3><i class="fas fa-mobile-alt"></i> كيفية استخدام التطبيق</h3>
+
+            <h4>التسجيل والبدء:</h4>
+            <ol>
+              <li>
+                <strong>تحميل التطبيق:</strong> حمل تطبيق "متجرك - CodeBH" من
+                متجر التطبيقات
+              </li>
+              <li>
+                <strong>إنشاء حساب:</strong> سجل باستخدام رقم الهاتف أو البريد
+                الإلكتروني
+              </li>
+              <li><strong>التحقق:</strong> أكد رقم هاتفك برمز التحقق</li>
+              <li>
+                <strong>إكمال الملف:</strong> أضف عنوان التوصيل ومعلومات الدفع
+              </li>
+            </ol>
+
+            <h4>الوصول للمتاجر:</h4>
+            <ul>
+              <li>
+                <strong>احصل على رمز المتجر:</strong> من التاجر أو من إعلاناته
+              </li>
+              <li><strong>أدخل الرمز:</strong> في الشاشة الرئيسية للتطبيق</li>
+              <li>
+                <strong>تصفح المنتجات:</strong> ستظهر لك واجهة المتجر بتصميمه
+                الخاص
+              </li>
+              <li>
+                <strong>تسوق بحرية:</strong> أضف المنتجات للسلة واستمتع بالتسوق
+              </li>
+            </ul>
+
+            <h3><i class="fas fa-shopping-basket"></i> عملية الشراء</h3>
+
+            <h4>خطوات إتمام الطلب:</h4>
+            <ol>
+              <li>
+                <strong>إضافة للسلة:</strong> اختر المنتجات والكميات المطلوبة
+              </li>
+              <li>
+                <strong>مراجعة السلة:</strong> تأكد من صحة المنتجات والكميات
+              </li>
+              <li>
+                <strong>معلومات التوصيل:</strong> أدخل أو أكد عنوان التسليم
+              </li>
+              <li><strong>طريقة الدفع:</strong> اختر الطريقة المناسبة</li>
+              <li><strong>تأكيد الطلب:</strong> راجع التفاصيل الأخيرة وأكد</li>
+              <li><strong>تتبع الطلب:</strong> ستحصل على رقم طلب للمتابعة</li>
+            </ol>
+
+            <h4>طرق الدفع المتاحة:</h4>
+            <ul>
+              <li>
+                <strong>الدفع عند الاستلام:</strong> ادفع نقداً عند وصول الطلب
+              </li>
+              <li>
+                <strong>التحويل البنكي:</strong> حول المبلغ وارفع إثبات الدفع
+              </li>
+              <li>
+                <strong>البطاقات الائتمانية:</strong> إذا أعدها التاجر (آمنة
+                ومشفرة)
+              </li>
+              <li>
+                <strong>المحافظ الإلكترونية:</strong> حسب ما يوفره كل متجر
+              </li>
+            </ul>
+
+            <h3><i class="fas fa-truck"></i> التوصيل والاستلام</h3>
+
+            <h4>أنواع التوصيل:</h4>
+            <ul>
+              <li><strong>التوصيل العادي:</strong> 2-5 أيام حسب المنطقة</li>
+              <li>
+                <strong>التوصيل السريع:</strong> نفس اليوم أو اليوم التالي (في
+                المدن الكبرى)
+              </li>
+              <li><strong>الاستلام من المتجر:</strong> إذا كان متاحاً</li>
+              <li><strong>نقاط الاستلام:</strong> مواقع محددة للاستلام</li>
+            </ul>
+
+            <h4>تتبع الطلب:</h4>
+            <ul>
+              <li>
+                <strong>في التطبيق:</strong> قسم "طلباتي" يظهر الحالة الحالية
+              </li>
+              <li><strong>الإشعارات:</strong> تنبيهات عند تغيير حالة الطلب</li>
+              <li><strong>رسائل SMS:</strong> تحديثات عبر الرسائل النصية</li>
+              <li><strong>البريد الإلكتروني:</strong> تفاصيل مفصلة عن الطلب</li>
+            </ul>
+
+            <h3><i class="fas fa-star"></i> نظام النقاط والمكافآت</h3>
+
+            <h4>كيفية كسب النقاط:</h4>
+            <ul>
+              <li><strong>الشراء:</strong> نقطة واحدة لكل ريال يتم إنفاقه</li>
+              <li><strong>التقييم:</strong> 10 نقاط لكل تقييم صادق</li>
+              <li><strong>الإحالة:</strong> 50 نقطة عند إحالة صديق</li>
+              <li><strong>المراجعات:</strong> 15 نقطة لكل مراجعة مفيدة</li>
+            </ul>
+
+            <h4>استخدام النقاط:</h4>
+            <ul>
+              <li><strong>خصومات:</strong> كل 100 نقطة = 10 ريال خصم</li>
+              <li><strong>شحن مجاني:</strong> 50 نقطة للتوصيل المجاني</li>
+              <li><strong>عروض حصرية:</strong> منتجات بنقاط فقط</li>
+              <li>
+                <strong>ترقية العضوية:</strong> مزايا إضافية للأعضاء الذهبيين
+              </li>
+            </ul>
+
+            <h3><i class="fas fa-undo-alt"></i> الإرجاع والاستبدال</h3>
+
+            <div class="alert warning">
+              <i class="fas fa-exclamation-triangle"></i>
+              <div>
+                <strong>انتبه:</strong> سياسات الإرجاع تختلف من متجر لآخر. راجع
+                سياسة كل متجر قبل الشراء.
+              </div>
+            </div>
+
+            <h4>الشروط العامة للإرجاع:</h4>
+            <ul>
+              <li><strong>المدة:</strong> عادة 7-15 يوم من تاريخ الاستلام</li>
+              <li>
+                <strong>حالة المنتج:</strong> يجب أن يكون في حالته الأصلية
+              </li>
+              <li><strong>التغليف:</strong> مع التغليف الأصلي والملصقات</li>
+              <li><strong>الفاتورة:</strong> وجود إثبات الشراء</li>
+            </ul>
+
+            <h4>خطوات طلب الإرجاع:</h4>
+            <ol>
+              <li>
+                <strong>تواصل مع التاجر:</strong> أولاً عبر الدردشة في التطبيق
+              </li>
+              <li><strong>اشرح السبب:</strong> وضح سبب طلب الإرجاع</li>
+              <li><strong>ارفق الصور:</strong> إذا كان المنتج معيباً</li>
+              <li>
+                <strong>انتظر الموافقة:</strong> رد التاجر خلال 24-48 ساعة
+              </li>
+              <li><strong>أرسل المنتج:</strong> حسب تعليمات التاجر</li>
+              <li><strong>استرداد المبلغ:</strong> خلال 3-7 أيام عمل</li>
+            </ol>
+
+            <h3>
+              <i class="fas fa-question-circle"></i> المشاكل الشائعة للعملاء
+            </h3>
+
+            <h4>مشكلة: لا أستطيع الدخول لمتجر معين</h4>
+            <p><strong>الحل:</strong></p>
+            <ul>
+              <li>تأكد من صحة رمز المتجر (Store Code)</li>
+              <li>تأكد من أن المتجر لا يزال نشطاً</li>
+              <li>جرب كتابة الرمز بأحرف إنجليزية كبيرة</li>
+              <li>تأكد من اتصالك بالإنترنت</li>
+            </ul>
+
+            <h4>مشكلة: فشل في عملية الدفع</h4>
+            <p><strong>الحل:</strong></p>
+            <ul>
+              <li>تأكد من صحة بيانات البطاقة</li>
+              <li>تحقق من الرصيد المتاح</li>
+              <li>جرب طريقة دفع أخرى</li>
+              <li>تواصل مع البنك إذا استمرت المشكلة</li>
+            </ul>
+
+            <h4>مشكلة: الطلب تأخر عن الموعد المحدد</h4>
+            <p><strong>الحل:</strong></p>
+            <ul>
+              <li>راجع تتبع الطلب في التطبيق</li>
+              <li>تواصل مع التاجر مباشرة</li>
+              <li>إذا لم يرد التاجر، ارفع شكوى للمنصة</li>
+              <li>نحن سنتدخل لحل المشكلة</li>
+            </ul>
+          </section>
+
+          <!-- Technical Support -->
+          <section id="technical-support" class="support-section">
+            <h2><i class="fas fa-cogs"></i> الدعم التقني</h2>
+
+            <h3><i class="fas fa-mobile-alt"></i> مشاكل التطبيق الشائعة</h3>
+
+            <h4>التطبيق يتوقف أو يتجمد:</h4>
+            <ul>
+              <li><strong>إعادة التشغيل:</strong> أغلق التطبيق وأعد فتحه</li>
+              <li>
+                <strong>تحديث التطبيق:</strong> تأكد من أنك تستخدم أحدث نسخة
+              </li>
+              <li><strong>مسح الكاش:</strong> من إعدادات التطبيق</li>
+              <li><strong>إعادة التثبيت:</strong> احذف التطبيق وأعد تثبيته</li>
+            </ul>
+            <h4>مشاكل في تسجيل الدخول:</h4>
+            <ul>
+              <li>
+                <strong>إعادة تعيين كلمة المرور:</strong> استخدم خيار "نسيت كلمة
+                المرور"
+              </li>
+              <li>
+                <strong>التحقق من البريد:</strong> تأكد من صحة البريد الإلكتروني
+                أو رقم الهاتف
+              </li>
+              <li><strong>تحقق من الاتصال:</strong> تأكد من اتصال الإنترنت</li>
+              <li><strong>تواصل معنا:</strong> إذا استمرت المشكلة</li>
+            </ul>
+            <h4>مشاكل في الإشعارات:</h4>
+            <ul>
+              <li><strong>تفعيل الإشعارات:</strong> من إعدادات التطبيق</li>
+              <li>
+                <strong>إعدادات الهاتف:</strong> تأكد من تفعيل الإشعارات للتطبيق
+              </li>
+              <li><strong>إعادة التشغيل:</strong> أعد تشغيل الهاتف</li>
+              <li><strong>تحديث التطبيق:</strong> استخدم أحدث نسخة</li>
+            </ul>
+            <h4>مشاكل في الأداء:</h4>
+            <ul>
+              <li><strong>إغلاق التطبيقات الأخرى:</strong> لتحرير الذاكرة</li>
+              <li><strong>تحديث النظام:</strong> تأكد من تحديث نظام التشغيل</li>
+              <li><strong>مسح الكاش:</strong> من إعدادات التطبيق</li>
+              <li><strong>إعادة التثبيت:</strong> احذف التطبيق وأعد تثبيته</li>
+            </ul>
+            <h4>مشاكل في الدفع:</h4>
+            <ul>
+              <li>
+                <strong>تأكد من البيانات:</strong> تحقق من صحة معلومات الدفع
+              </li>
+              <li><strong>تحقق من الرصيد:</strong> تأكد من وجود رصيد كافٍ</li>
+              <li><strong>جرب طريقة أخرى:</strong> استخدم طريقة دفع مختلفة</li>
+              <li><strong>تواصل مع البنك:</strong> إذا استمرت المشكلة</li>
+            </ul>
+            <h4>مشاكل في التتبع:</h4>
+            <ul>
+              <li>
+                <strong>تحديث التطبيق:</strong> تأكد من أنك تستخدم أحدث نسخة
+              </li>
+              <li><strong>إعادة الدخول:</strong> سجل خروج ثم دخول مرة أخرى</li>
+              <li><strong>تحقق من الاتصال:</strong> تأكد من اتصال الإنترنت</li>
+              <li><strong>تواصل معنا:</strong> إذا استمرت المشكلة</li>
+            </ul>
+
+            <h3>
+              <i class="fas fa-cloud-upload-alt"></i> رفع البلاغات التقنية
+            </h3>
+            <p>
+              إذا واجهت مشكلة تقنية غير مذكورة أعلاه، يرجى ملء النموذج أدناه
+              لتقديم بلاغ. سنقوم بمراجعة البلاغ والرد عليك في أقرب وقت ممكن.
+            </p>
+                         <form class="ticket-form" id="ticketForm" action="mailto:camycamat@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                  <label for="name">الاسم الكامل</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">البريد الإلكتروني</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="issueType">نوع المشكلة</label>
+                  <select id="issueType" name="issueType" required>
+                    <option value="">اختر نوع المشكلة</option>
+                    <option value="appCrash">توقف التطبيق</option>
+                    <option value="loginIssue">مشكلة في تسجيل الدخول</option>
+                    <option value="paymentIssue">مشكلة في الدفع</option>
+                    <option value="notificationIssue">مشكلة في الإشعارات</option>
+                    <option value="other">أخرى</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="description">وصف المشكلة</label>
+                  <textarea id="description" name="description" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال البلاغ</button>
+              </form>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>عن متجرك - CodeBH</h4>
+              <p>
+                منصة تسوق إلكترونية مبتكرة تربط بين التجار والعملاء بسهولة وأمان.
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>روابط سريعة</h4>
+              <a href="privacy.html"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a>
+              <a href="terms.html"><i class="fas fa-file-contract"></i> شروط الاستخدام</a>
+              <a href="support.html"><i class="fas fa-headset"></i> الدعم الفني</a>
+            </div>
+            <div class="footer-section">
+              <h4>تواصل معنا</h4>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:camycamat@gmail.com">camycamat@gmail.com</a>
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>تابعنا</h4>
+              <a href="#"><i class="fab fa-facebook-f"></i> فيسبوك</a>
+              <a href="#"><i class="fab fa-twitter"></i> تويتر</a>
+              <a href="#"><i class="fab fa-instagram"></i> إنستغرام </a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            &copy; 2024 متجرك - CodeBH. جميع الحقوق محفوظة.
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+  document.getElementById("ticketForm").addEventListener("submit", function (event) {
+    event.preventDefault(); 
+    alert("شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.");
+    this.reset();
+  });
+</script>
+
+  </body>
+</html>
