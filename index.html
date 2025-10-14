@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeBH - منصتك الذكية للتجارة الإلكترونية</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -20,298 +20,1340 @@
         box-sizing: border-box;
       }
 
+      :root {
+        --primary: #673de6;
+        --primary-light: #8b5cf6;
+        --accent: #ff6b35;
+        --accent-light: #ff8555;
+        --success: #10b981;
+        --dark: #1a1a2e;
+        --text: #2d3748;
+        --text-light: #718096;
+        --bg: #ffffff;
+        --bg-light: #f7fafc;
+        --border: #e2e8f0;
+      }
+
       body {
         font-family: "Tajawal", sans-serif;
-        background: #f7f8fa;
-        color: #333;
-        line-height: 1.8;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        transition: all 0.3s;
+      }
+
+      .navbar-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 72px;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-light)
+        );
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        background: var(--primary);
+        color: white;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-light);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(103, 61, 230, 0.3);
       }
 
       /* ===== HERO SECTION ===== */
       .hero {
-        background: linear-gradient(135deg, #4a6cf7, #764ba2);
+        margin-top: 72px;
+        background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+        padding: 80px 24px 60px;
+      }
+
+      .hero-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-content h1 {
+        font-size: 56px;
+        font-weight: 800;
+        color: var(--dark);
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+
+      .hero-content h1 .highlight {
+        color: var(--primary);
+      }
+
+      .hero-content p {
+        font-size: 20px;
+        color: var(--text-light);
+        margin-bottom: 32px;
+        line-height: 1.6;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 16px 32px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-primary {
+        background: var(--primary);
         color: white;
+        box-shadow: 0 4px 16px rgba(103, 61, 230, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(103, 61, 230, 0.4);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--primary);
+        border: 2px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--primary);
+        background: #f7fafc;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .hero-card {
+        background: white;
+        border-radius: 20px;
+        padding: 32px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border);
+      }
+
+      .hero-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .hero-card h3 {
+        font-size: 20px;
+        color: var(--dark);
+      }
+
+      .badge {
+        background: #dcfce7;
+        color: #166534;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .stat-item {
+        flex: 1;
+        background: var(--bg-light);
+        padding: 20px;
+        border-radius: 12px;
         text-align: center;
-        padding: 80px 20px;
+      }
+
+      .stat-value {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+
+      .stat-label {
+        font-size: 13px;
+        color: var(--text-light);
+      }
+
+      /* ===== TRUST BADGES ===== */
+      .trust-section {
+        padding: 40px 24px;
+        background: white;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .trust-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .trust-text {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 24px;
+        font-weight: 500;
+      }
+
+      .trust-stats {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+
+      .trust-stat {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .trust-stat i {
+        color: var(--accent);
+        font-size: 20px;
+      }
+
+      .trust-stat span {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      /* ===== FEATURES SECTION ===== */
+      .features-section {
+        padding: 100px 24px;
+        background: var(--bg-light);
+      }
+
+      .section-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .section-tag {
+        display: inline-block;
+        background: #ede9fe;
+        color: var(--primary);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-size: 44px;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 16px;
+      }
+
+      .section-description {
+        font-size: 18px;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 16px;
+        padding: 32px;
+        border: 1px solid var(--border);
+        transition: all 0.3s;
         position: relative;
         overflow: hidden;
       }
 
-      .hero::after {
+      .feature-card::before {
         content: "";
         position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.15) 10%,
-          transparent 10%
-        );
-        background-size: 80px 80px;
-        animation: moveBg 20s linear infinite;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        transform: scaleX(0);
+        transition: transform 0.3s;
       }
 
-      @keyframes moveBg {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(50px, 50px);
-        }
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary);
       }
 
-      .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 15px;
+      .feature-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .feature-icon-wrapper {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #ede9fe, #f3e8ff);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .feature-icon-wrapper i {
+        font-size: 26px;
+        color: var(--primary);
+      }
+
+      .feature-card h3 {
+        font-size: 20px;
         font-weight: 700;
-        z-index: 2;
-        position: relative;
+        color: var(--dark);
+        margin-bottom: 12px;
       }
 
-      .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 25px;
-        opacity: 0.9;
-        z-index: 2;
-        position: relative;
+      .feature-card p {
+        font-size: 15px;
+        color: var(--text-light);
+        line-height: 1.6;
+        margin-bottom: 16px;
       }
 
-      .hero .btn {
-        background: #fff;
-        color: #4a6cf7;
-        padding: 14px 30px;
-        border-radius: 30px;
-        font-weight: bold;
+      .feature-link {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 15px;
         text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.3s;
+      }
+
+      .feature-link:hover {
+        gap: 10px;
+      }
+
+      /* ===== PRICING HIGHLIGHT ===== */
+      .pricing-highlight {
+        padding: 100px 24px;
+        background: white;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .pricing-card {
+        background: white;
+        border: 2px solid var(--border);
+        border-radius: 20px;
+        padding: 40px 32px;
         transition: all 0.3s;
-        z-index: 2;
         position: relative;
       }
 
-      .hero .btn:hover {
-        background: #4a6cf7;
-        color: #fff;
+      .pricing-card.featured {
+        border-color: var(--primary);
+        box-shadow: 0 20px 60px rgba(103, 61, 230, 0.15);
         transform: scale(1.05);
       }
 
-      /* ===== NAVBAR ===== */
-      nav {
-        background: #2c3e50;
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        padding: 15px;
+      .pricing-badge {
+        position: absolute;
+        top: -12px;
+        right: 32px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
       }
 
-      nav a {
-        color: #fff;
-        text-decoration: none;
+      .pricing-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 16px;
+      }
+
+      .pricing-price {
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+
+      .pricing-price span {
+        font-size: 20px;
+        color: var(--text-light);
         font-weight: 500;
-        transition: 0.3s;
       }
 
-      nav a:hover {
-        color: #4a6cf7;
+      .pricing-description {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
       }
 
-      /* ===== FEATURES ===== */
-      .features {
-        max-width: 1100px;
-        margin: 60px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        padding: 0 20px;
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 32px;
       }
 
-      .feature-box {
-        background: #fff;
-        border-radius: 15px;
-        padding: 30px;
+      .pricing-features li {
+        padding: 10px 0;
+        color: var(--text);
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .pricing-features i {
+        color: var(--success);
+        font-size: 18px;
+      }
+
+      .pricing-btn {
+        width: 100%;
         text-align: center;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-        transition: 0.3s;
+        padding: 14px;
+        background: var(--primary);
+        color: white;
+        border-radius: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s;
       }
 
-      .feature-box:hover {
-        transform: translateY(-8px);
+      .pricing-card.featured .pricing-btn {
+        background: var(--accent);
       }
 
-      .feature-box i {
-        font-size: 2.5rem;
-        color: #4a6cf7;
-        margin-bottom: 15px;
-      }
-
-      .feature-box h3 {
-        margin-bottom: 12px;
-        color: #34495e;
+      .pricing-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(103, 61, 230, 0.3);
       }
 
       /* ===== TESTIMONIALS ===== */
-      .testimonials {
-        background: #f0f3f7;
-        padding: 60px 20px;
-        text-align: center;
+      .testimonials-section {
+        padding: 100px 24px;
+        background: linear-gradient(180deg, var(--bg-light) 0%, white 100%);
       }
 
-      .testimonials h2 {
-        font-size: 2rem;
-        margin-bottom: 40px;
-        color: #2c3e50;
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
       }
 
-      .testimonial-box {
+      .testimonial-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+        transition: all 0.3s;
+      }
+
+      .testimonial-card:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .testimonial-info h4 {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      .testimonial-info p {
+        font-size: 14px;
+        color: var(--text-light);
+      }
+
+      .testimonial-rating {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 16px;
+      }
+
+      .testimonial-rating i {
+        color: #fbbf24;
+        font-size: 16px;
+      }
+
+      .testimonial-text {
+        font-size: 15px;
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      /* ===== CTA SECTION ===== */
+      .cta-section {
+        padding: 100px 24px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="white" opacity="0.1"/></svg>');
+      }
+
+      .cta-wrapper {
         max-width: 800px;
-        margin: 0 auto 30px;
-        background: #fff;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
       }
 
-      .testimonial-box p {
-        font-style: italic;
-        margin-bottom: 15px;
+      .cta-wrapper h2 {
+        font-size: 44px;
+        font-weight: 800;
+        margin-bottom: 20px;
       }
 
-      .testimonial-box strong {
-        color: #4a6cf7;
+      .cta-wrapper p {
+        font-size: 20px;
+        margin-bottom: 40px;
+        opacity: 0.95;
+      }
+
+      .cta-btn {
+        background: white;
+        color: var(--primary);
+        padding: 18px 48px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
       }
 
       /* ===== FOOTER ===== */
       footer {
-        background: #2c3e50;
+        background: #0f172a;
         color: white;
-        padding: 50px 20px;
-        margin-top: 50px;
+        padding: 80px 24px 32px;
       }
 
-      .footer-content {
+      .footer-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-        margin-bottom: 30px;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+
+      .footer-about h3 {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 16px;
+        color: white;
+      }
+
+      .footer-about p {
+        color: #94a3b8;
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
       }
 
       .footer-section h4 {
-        margin-bottom: 15px;
-        color: #4a6cf7;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
       }
 
-      .footer-section a {
-        color: #bdc3c7;
-        display: block;
-        margin-bottom: 8px;
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
         text-decoration: none;
-        transition: 0.3s;
+        font-size: 15px;
+        transition: color 0.2s;
       }
 
-      .footer-section a:hover {
-        color: #fff;
+      .footer-links a:hover {
+        color: white;
       }
 
       .footer-bottom {
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-top: 15px;
-        font-size: 0.9rem;
-        color: #aaa;
+        padding-top: 32px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1024px) {
+        .hero-wrapper {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .features-grid,
+        .testimonials-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-content h1 {
+          font-size: 36px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        .features-grid,
+        .pricing-grid,
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-wrapper h2 {
+          font-size: 32px;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- HERO -->
-    <header class="hero">
-      <h1>CodeBH - منصتك الذكية</h1>
-      <p>حل Smart White Label يربط التجار والعملاء في مكان واحد</p>
-      <a href="support.html" class="btn">ابدأ الآن</a>
-    </header>
-
     <!-- NAVBAR -->
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="privacy.html">سياسة الخصوصية</a>
-      <a href="terms.html">شروط الاستخدام</a>
-      <a href="support.html">الدعم الفني</a>
+    <nav class="navbar">
+      <div class="navbar-wrapper">
+        <div class="navbar-content">
+          <div class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            CodeBH
+          </div>
+          <div class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="privacy.html">الخصوصية</a>
+            <a href="terms.html">الشروط</a>
+            <a href="support.html">الدعم</a>
+            <a href="support.html" class="nav-cta">ابدأ الآن</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-wrapper">
+        <div class="hero-content">
+          <h1>منصة <span class="highlight">ذكية</span> للتجارة الإلكترونية</h1>
+          <p>
+            حل Smart White Label متكامل يربط التجار والعملاء في مكان واحد. ابدأ
+            متجرك الإلكتروني اليوم بأدوات احترافية وسهلة الاستخدام
+          </p>
+          <div class="hero-buttons">
+            <a href="support.html" class="btn btn-primary">
+              ابدأ مجاناً <i class="fas fa-arrow-left"></i>
+            </a>
+            <a href="https://codebh.pages.dev/" class="btn btn-secondary">
+              <i class="fas fa-play-circle"></i> شاهد العرض التوضيحي
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <h3>أداء متميز</h3>
+              <span class="badge">نشط الآن</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat-item">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">متجر نشط</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">10K+</div>
+                <div class="stat-label">عميل</div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-item">
+                <div class="stat-value">99.9%</div>
+                <div class="stat-label">وقت التشغيل</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">دعم فني</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="trust-section">
+      <div class="trust-wrapper">
+        <p class="trust-text">موثوق به من قبل آلاف التجار والعملاء</p>
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <i class="fas fa-star"></i>
+            <span>تقييم 4.9/5</span>
+          </div>
+          <div class="trust-stat">
+            <i class="fas fa-shield-alt"></i>
+            <span>أمان SSL متقدم</span>
+          </div>
+          <div class="trust-stat">
+            <i class="fas fa-rocket"></i>
+            <span>أداء فائق السرعة</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FEATURES -->
-    <section class="features">
-      <div class="feature-box">
-        <i class="fas fa-store"></i>
-        <h3>متاجر مخصصة</h3>
-        <p>أنشئ متجرك الإلكتروني الخاص بك بسهولة مع خيارات تخصيص كاملة.</p>
+    <section class="features-section">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-tag">المميزات</span>
+          <h2 class="section-title">كل ما تحتاجه لنجاح متجرك</h2>
+          <p class="section-description">
+            نوفر لك أدوات احترافية ومتكاملة لإدارة متجرك الإلكتروني بكفاءة عالية
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3>متاجر مخصصة بالكامل</h3>
+            <p>
+              أنشئ متجرك الإلكتروني بتصميم احترافي وخيارات تخصيص كاملة تناسب
+              علامتك التجارية
+            </p>
+            <a href="#" class="feature-link">
+              اعرف المزيد <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>تجربة عملاء استثنائية</h3>
+            <p>
+              واجهة سهلة وسلسة تمنح عملائك تجربة تسوق ممتعة وآمنة عبر تطبيق واحد
+            </p>
+            <a href="#" class="feature-link">
+              اعرف المزيد <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>أمان متقدم</h3>
+            <p>
+              حماية قوية لبيانات التجار والعملاء مع تشفير SSL وأعلى معايير
+              الأمان
+            </p>
+            <a href="#" class="feature-link">
+              اعرف المزيد <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>تحليلات وتقارير</h3>
+            <p>
+              لوحة تحكم شاملة مع تقارير تفصيلية لمساعدتك على فهم أدائك واتخاذ
+              قرارات ذكية
+            </p>
+            <a href="#" class="feature-link">
+              اعرف المزيد <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>تطبيق متجاوب</h3>
+            <p>
+              تطبيق سريع يعمل على جميع الأجهزة والشاشات بسلاسة تامة وأداء عالي
+            </p>
+            <a href="#" class="feature-link">
+              اعرف المزيد <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>نسخة تجريبية مجانية</h3>
+            <p>
+              جرّب المنصة مجاناً عبر النسخة التجريبية على الويب واكتشف جميع
+              المميزات
+            </p>
+            <a href="https://codebh.pages.dev/" class="feature-link">
+              جرّب الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="feature-box">
-        <i class="fas fa-users"></i>
-        <h3>تجربة عملاء مميزة</h3>
-        <p>وفر لعملائك تجربة تسوق سهلة وآمنة عبر تطبيق واحد.</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-lock"></i>
-        <h3>أمان وحماية</h3>
-        <p>حماية قوية لبيانات التجار والعملاء مع أعلى معايير الخصوصية.</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-chart-line"></i>
-        <h3>تقارير و إحصائيات</h3>
-        <p>تحكم كامل في متجرك مع تقارير تفصيلية تساعدك على النمو.</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-store"></i>
-        <h3>نسخه تجريبية ويب فقط</h3>
-        <p>يمكنك تصفح نسخة تجريبية من التطبيق على الويب .</p>
-        <a href="https://codebh.pages.dev/">تطبيق متجرك</a>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-highlight">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-tag">الخطط والأسعار</span>
+          <h2 class="section-title">اختر الخطة المناسبة لك</h2>
+          <p class="section-description">
+            خطط مرنة تناسب جميع أحجام الأعمال من الشركات الناشئة إلى المؤسسات
+            الكبيرة
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-name">الباقة الأساسية</div>
+            <div class="pricing-price">15<span> BHD/30 يوم</span></div>
+            <div class="pricing-description">
+              مثالية للمتاجر الصغيرة والمبتدئين
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check-circle"></i> 100 منتج</li>
+              <li><i class="fas fa-check-circle"></i> 5 موظفين</li>
+              <li><i class="fas fa-check-circle"></i> 1GB تخزين</li>
+              <li>
+                <i class="fas fa-check-circle"></i> دعم عبر البريد الإلكتروني
+              </li>
+            </ul>
+            <a href="support.html" class="pricing-btn">اختر الباقة</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">الأكثر شعبية</div>
+            <div class="pricing-name">الباقة المتقدمة</div>
+            <div class="pricing-price">35<span> BHD/30 يوم</span></div>
+            <div class="pricing-description">
+              للأعمال المتنامية والمتاجر النشطة
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check-circle"></i> 500 منتج</li>
+              <li><i class="fas fa-check-circle"></i> 15 موظف</li>
+              <li><i class="fas fa-check-circle"></i> 5GB تخزين</li>
+              <li><i class="fas fa-check-circle"></i> دعم أولوي</li>
+              <li><i class="fas fa-check-circle"></i> تقارير متقدمة</li>
+            </ul>
+            <a href="support.html" class="pricing-btn">اختر الباقة</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-name">الباقة الاحترافية</div>
+            <div class="pricing-price">75<span> BHD/30 يوم</span></div>
+            <div class="pricing-description">للمتاجر الكبيرة والاحترافية</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check-circle"></i> منتجات غير محدودة</li>
+              <li><i class="fas fa-check-circle"></i> 50 موظف</li>
+              <li><i class="fas fa-check-circle"></i> 20GB تخزين</li>
+              <li><i class="fas fa-check-circle"></i> دعم عبر مدير اساعة</li>
+              <li><i class="fas fa-check-circle"></i> تقارير متقدمة</li>
+              <li><i class="fas fa-check-circle"></i> API مخصص</li>
+            </ul>
+            <a href="support.html" class="pricing-btn">اختر الباقة</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-name">باقة الشراكات</div>
+            <div class="pricing-price">150<span> BHD/30 يوم</span></div>
+            <div class="pricing-description">حلول شاملة للشراكات التجارية</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check-circle"></i> كل شيء غير محدود</li>
+              <li><i class="fas fa-check-circle"></i> مستخدمين غير محدودين</li>
+              <li><i class="fas fa-check-circle"></i> تخزين غير محدود</li>
+              <li><i class="fas fa-check-circle"></i> مدير حساب مخصص</li>
+              <li><i class="fas fa-check-circle"></i> دعم مخصص 24/7</li>
+              <li><i class="fas fa-check-circle"></i> تخصيص كامل</li>
+              <li><i class="fas fa-check-circle"></i> SLA مضمون</li>
+            </ul>
+            <a href="support.html" class="pricing-btn">اختر الباقة</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="testimonials">
-      <h2>ماذا يقول عملاؤنا</h2>
-      <div class="testimonial-box">
-        <p>"منصة CodeBH غيرت طريقة إدارتي لمتجري بالكامل، سهلة واحترافية!"</p>
-        <strong>- أحمد، صاحب متجر</strong>
+    <section class="testimonials-section">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-tag">آراء العملاء</span>
+          <h2 class="section-title">ماذا يقول عملاؤنا</h2>
+          <p class="section-description">
+            تجارب حقيقية من تجار وأصحاب متاجر يستخدمون CodeBH يومياً
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">أ</div>
+              <div class="testimonial-info">
+                <h4>أحمد المنصور</h4>
+                <p>صاحب متجر إلكتروني</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "منصة CodeBH غيرت طريقة إدارتي لمتجري بالكامل! سهلة الاستخدام
+              واحترافية جداً. الدعم الفني ممتاز والتقارير التفصيلية ساعدتني على
+              فهم عملائي بشكل أفضل."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">س</div>
+              <div class="testimonial-info">
+                <h4>سارة أحمد</h4>
+                <p>عميلة نشطة</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "أستطيع التسوق من عدة متاجر في تطبيق واحد فقط! تجربة رائعة ومريحة
+              جداً. التطبيق سريع وسهل ويوفر لي الكثير من الوقت."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">م</div>
+              <div class="testimonial-info">
+                <h4>محمد العلي</h4>
+                <p>رائد أعمال</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "الدعم الفني استثنائي والمنصة توفر كل الأدوات التي أحتاجها لإدارة
+              متجري بكفاءة عالية. استطعت زيادة مبيعاتي بنسبة 200% خلال 3 أشهر
+              فقط!"
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">ف</div>
+              <div class="testimonial-info">
+                <h4>فاطمة حسن</h4>
+                <p>صاحبة متجر أزياء</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "التصميم جميل جداً وسهل التخصيص. استطعت إطلاق متجري في أقل من يوم
+              واحد! المنصة مرنة وتناسب احتياجاتي بشكل مثالي."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">ع</div>
+              <div class="testimonial-info">
+                <h4>عبدالله خالد</h4>
+                <p>مدير تجارة إلكترونية</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "أفضل منصة تجارة إلكترونية جربتها! الأداء سريع جداً والتقارير
+              دقيقة. الفريق محترف ويستجيب بسرعة لأي استفسار."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">ن</div>
+              <div class="testimonial-info">
+                <h4>نورة السالم</h4>
+                <p>صاحبة متجر مستحضرات تجميل</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "منصة رائعة بأسعار معقولة جداً! حصلت على جميع المميزات التي
+              أحتاجها لإدارة متجري بنجاح. أنصح بها بشدة!"
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="testimonial-box">
-        <p>"أستطيع التسوق من عدة متاجر في تطبيق واحد فقط، تجربة رائعة!"</p>
-        <strong>- سارة، عميلة</strong>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-wrapper">
+        <h2>جاهز لبدء رحلتك في التجارة الإلكترونية؟</h2>
+        <p>
+          انضم إلى آلاف التجار الناجحين الذين يثقون في CodeBH لإدارة متاجرهم
+        </p>
+        <a href="support.html" class="btn btn-primary cta-btn">
+          ابدأ مجاناً الآن <i class="fas fa-rocket"></i>
+        </a>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>عن CodeBH</h4>
+      <div class="footer-wrapper">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <h3>CodeBH</h3>
+            <p>
+              منصة مبتكرة للتجارة الإلكترونية تربط بين التجار والعملاء بسهولة
+              وأمان، مع توفير أدوات احترافية لإدارة المتاجر الإلكترونية بكفاءة
+              عالية.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://wa.me/97333991916"
+                target="_blank"
+                class="social-icon"
+                title="واتساب"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://instagram.com/advance_s_m"
+                target="_blank"
+                class="social-icon"
+                title="إنستقرام"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://discord.gg/fk9d7jhd3Z"
+                target="_blank"
+                class="social-icon"
+                title="ديسكورد"
+              >
+                <i class="fab fa-discord"></i>
+              </a>
+              <a
+                href="https://github.com/turkialanizi78"
+                target="_blank"
+                class="social-icon"
+                title="جيت هاب"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@mrtaroky"
+                target="_blank"
+                class="social-icon"
+                title="يوتيوب"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>المنصة</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="#">المميزات</a></li>
+              <li><a href="#">الأسعار</a></li>
+              <li>
+                <a href="https://codebh.pages.dev/" target="_blank"
+                  >النسخة التجريبية</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>الدعم</h4>
+            <ul class="footer-links">
+              <li><a href="support.html">الدعم الفني</a></li>
+              <li><a href="privacy.html">سياسة الخصوصية</a></li>
+              <li><a href="terms.html">شروط الاستخدام</a></li>
+              <li><a href="#">الأسئلة الشائعة</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>تواصل معنا</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:camycamat@gmail.com">
+                  <i class="fas fa-envelope"></i> camycamat@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/97333991916" target="_blank">
+                  <i class="fab fa-whatsapp"></i> +973 3399 1916
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/turkialanizi78" target="_blank">
+                  <i class="fab fa-github"></i> turkialanizi78
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-map-marker-alt"></i> المنامة، البحرين
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 CodeBH. جميع الحقوق محفوظة.</p>
           <p>
-            منصة مبتكرة للتجارة الإلكترونية، تربط بين التجار والعملاء بسهولة
-            وأمان.
+            صُنع بـ <i class="fas fa-heart" style="color: #ff6b35"></i> في
+            البحرين
           </p>
         </div>
-        <div class="footer-section">
-          <h4>روابط سريعة</h4>
-          <a href="index.html">الرئيسية</a>
-          <a href="privacy.html">سياسة الخصوصية</a>
-          <a href="terms.html">شروط الاستخدام</a>
-          <a href="support.html">الدعم الفني</a>
-        </div>
-        <div class="footer-section">
-          <h4>تواصل معنا</h4>
-          <a href="mailto:camycamat@gmail.com"
-            ><i class="fa fa-envelope"></i> camycamat@gmail.com</a
-          >
-        </div>
-        <div class="footer-section">
-          <h4>تابعنا</h4>
-          <a href="#"><i class="fab fa-snapchat"></i> سناب شات</a>
-          <a href="#"><i class="fab fa-whatsapp"></i> واتساب</a>
-          <a href="#"><i class="fab fa-youtube"></i> يوتيوب</a>
-        </div>
       </div>
-      <div class="footer-bottom">&copy; 2024 CodeBH. جميع الحقوق محفوظة.</div>
     </footer>
   </body>
 </html>
