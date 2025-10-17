@@ -1,7 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import { TrendingUp, DollarSign, Zap, CheckCircle, Star, Globe, Settings, Download } from 'lucide-react'
+import { DollarSign, Zap, CheckCircle, Star, Globe, Settings, Download } from 'lucide-react'
 
 export default function ProjectPage() {
   const { t } = useLanguage()

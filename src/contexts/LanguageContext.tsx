@@ -211,7 +211,6 @@ const translations = {
     'trust.highPerformance': 'أداء فائق السرعة',
     
     // CTA Section
-    'cta.title': 'جاهز لبدء رحلتك في التجارة الإلكترونية؟',
     'cta.subtitle': 'انضم إلى آلاف التجار الناجحين الذين يثقون في CodeBH لإدارة متاجرهم',
     'cta.startNow': 'ابدأ مجاناً الآن',
     
