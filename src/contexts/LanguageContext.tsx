@@ -211,8 +211,6 @@ const translations = {
     'trust.highPerformance': 'أداء فائق السرعة',
     
     // CTA Section
-    'cta.subtitle': 'انضم إلى آلاف التجار الناجحين الذين يثقون في CodeBH لإدارة متاجرهم',
-    'cta.startNow': 'ابدأ مجاناً الآن',
     
     // Footer Translations
     'footer.platform': 'المنصة',
@@ -603,9 +601,6 @@ const translations = {
     'trust.highPerformance': 'High Performance',
     
     // CTA Section
-    'cta.title': 'Ready to start your e-commerce journey?',
-    'cta.subtitle': 'Join thousands of successful merchants who trust CodeBH to manage their stores',
-    'cta.startNow': 'Start Free Now',
     
     // Footer Translations
     'footer.platform': 'Platform',
