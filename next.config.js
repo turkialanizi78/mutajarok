@@ -14,6 +14,11 @@ const nextConfig = {
   
   // إعدادات الأمان
   poweredByHeader: false,
+  
+  // إعدادات Cloudflare
+  experimental: {
+    runtime: 'nodejs',
+  },
 }
 
 module.exports = nextConfig
