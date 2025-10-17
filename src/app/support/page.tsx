@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { Headphones, Mail, MessageCircle, Clock, Star, Shield, Zap, Users, Store, ShoppingCart, Settings, Bug, Lightbulb, Phone, MapPin, Globe } from 'lucide-react'
+import { Headphones, Mail, MessageCircle, Users, Store, ShoppingCart, Settings, Bug, Lightbulb, Phone, MapPin } from 'lucide-react'
 
 export default function SupportPage() {
   const { t } = useLanguage()

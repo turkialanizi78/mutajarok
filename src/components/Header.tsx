@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -21,7 +21,7 @@ export default function Header() {
     const themeContext = useTheme()
     theme = themeContext.theme
     toggleTheme = themeContext.toggleTheme
-  } catch (error) {
+  } catch {
     // Theme context not available yet
   }
 
@@ -30,7 +30,7 @@ export default function Header() {
     language = languageContext.language
     toggleLanguage = languageContext.toggleLanguage
     t = languageContext.t
-  } catch (error) {
+  } catch {
     // Language context not available yet
   }
 

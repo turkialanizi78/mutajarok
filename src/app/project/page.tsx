@@ -1,33 +1,11 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import { TrendingUp, Users, DollarSign, Shield, Zap, Target, Rocket, Award, CheckCircle, Star, Globe, Smartphone, Clock, BarChart3, Settings, Database, Lock, Eye, Trash2, Download, FileText, Phone, MapPin, Mail, MessageCircle } from 'lucide-react'
+import { TrendingUp, DollarSign, Zap, CheckCircle, Star, Globe, Settings, Download } from 'lucide-react'
 
 export default function ProjectPage() {
   const { t } = useLanguage()
 
-  const projectSections = [
-    {
-      icon: TrendingUp,
-      title: t('project.executiveSummary'),
-      content: t('project.executiveSummaryContent'),
-    },
-    {
-      icon: DollarSign,
-      title: t('project.investmentOpportunity'),
-      content: t('project.investmentOpportunityContent'),
-    },
-    {
-      icon: Zap,
-      title: t('project.systemMechanics'),
-      content: t('project.systemMechanicsContent'),
-    },
-    {
-      icon: CheckCircle,
-      title: t('project.completedFeatures'),
-      content: t('project.completedFeaturesContent'),
-    },
-  ]
 
   const techStack = [
     { name: t('project.frontend'), technologies: ['React Native', 'TypeScript', 'Redux'] },
@@ -172,7 +150,7 @@ export default function ProjectPage() {
               Smart White Label E-commerce Platform
             </div>
             <div className="text-lg md:text-xl mb-8 italic opacity-90">
-              "{t('project.tagline')}"
+              &ldquo;{t('project.tagline')}&rdquo;
             </div>
             <p className="text-lg">
               {t('project.presentationDate')}

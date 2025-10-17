@@ -2,7 +2,6 @@
 const nextConfig = {
   // إعدادات أساسية
   reactStrictMode: true,
-  swcMinify: true,
   
   // إعدادات الصور
   images: {

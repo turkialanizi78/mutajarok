@@ -368,7 +368,7 @@ export default function HomePage() {
               >
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 text-sky-200 dark:text-purple-800 text-4xl opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                  "
+                  &ldquo;
                 </div>
                 
                 <div className="flex items-center mb-6 relative z-10">
@@ -392,7 +392,7 @@ export default function HomePage() {
                 </div>
                 
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed relative z-10 italic">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
                 
                 {/* Decorative Elements */}

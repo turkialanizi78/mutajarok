@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { Heart, MapPin, Mail, Phone, Github, Instagram, Youtube } from 'lucide-react'
+import { Heart, MapPin, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
   // Safe language hook
@@ -11,7 +11,7 @@ export default function Footer() {
   try {
     const languageContext = useLanguage()
     t = languageContext.t
-  } catch (error) {
+  } catch {
     // Language context not available yet
   }
 

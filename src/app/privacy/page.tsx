@@ -1,7 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import { Shield, Database, Lock, Eye, Trash2, Download, Settings, Globe, Bell, Users, FileText } from 'lucide-react'
+import { Shield, Database, Lock, Eye, Trash2, Download, Settings, Bell, Users, FileText } from 'lucide-react'
 
 export default function PrivacyPage() {
   const { t } = useLanguage()
