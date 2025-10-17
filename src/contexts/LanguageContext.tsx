@@ -213,9 +213,6 @@ const translations = {
     // CTA Section
     
     // Footer Translations
-    'footer.platform': 'المنصة',
-    'footer.support': 'الدعم',
-    'footer.legal': 'القانونية',
     'footer.features': 'المميزات',
     'footer.pricing': 'الأسعار',
     'footer.demo': 'النسخة التجريبية',
@@ -223,11 +220,8 @@ const translations = {
     'footer.community': 'المجتمع',
     'footer.usagePolicy': 'سياسة الاستخدام',
     'footer.cookiePolicy': 'سياسة ملفات تعريف الارتباط',
-    'footer.description': 'منصة CodeBH هي الحل الأمثل للتجار الذين يريدون إنشاء متاجر إلكترونية احترافية بسهولة وسرعة. نوفر جميع الأدوات والخدمات التي تحتاجها لنجاح متجرك.',
     'footer.address': 'البحرين - المنامة',
     'footer.allRightsReserved': 'جميع الحقوق محفوظة',
-    'footer.madeWith': 'صُنع بـ',
-    'footer.inBahrain': 'في البحرين',
     
     // Support Page Translations
     'support.title': 'مركز الدعم والمساعدة',
@@ -603,9 +597,6 @@ const translations = {
     // CTA Section
     
     // Footer Translations
-    'footer.platform': 'Platform',
-    'footer.support': 'Support',
-    'footer.legal': 'Legal',
     'footer.features': 'Features',
     'footer.pricing': 'Pricing',
     'footer.demo': 'Demo Version',
@@ -613,11 +604,8 @@ const translations = {
     'footer.community': 'Community',
     'footer.usagePolicy': 'Usage Policy',
     'footer.cookiePolicy': 'Cookie Policy',
-    'footer.description': 'CodeBH platform is the perfect solution for merchants who want to create professional online stores easily and quickly. We provide all the tools and services you need for your store success.',
     'footer.address': 'Bahrain - Manama',
     'footer.allRightsReserved': 'All rights reserved',
-    'footer.madeWith': 'Made with',
-    'footer.inBahrain': 'in Bahrain',
     
     // Support Page Translations
     'support.title': 'Support Center',
