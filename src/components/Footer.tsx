@@ -54,7 +54,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">⚡</span>
               </div>
-              <span className="text-2xl font-bold">CodeBH</span>
+              <span className="text-2xl font-bold">متاجركم</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               {t('footer.description')}
@@ -129,8 +129,8 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <Mail className="w-5 h-5 text-purple-400" />
-              <a href="mailto:support@codebh.com" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">
-                support@codebh.com
+              <a href="mailto:support@mtajercom.com" className="text-gray-300 hover:text-purple-400 transition-colors duration-200">
+                support@mtajercom.com
               </a>
             </div>
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -145,7 +145,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 CodeBH. {t('footer.allRightsReserved')}
+            © 2025 متاجركم. {t('footer.allRightsReserved')}
           </p>
           <p className="text-gray-400 text-sm mt-4 md:mt-0">
             {t('footer.madeWith')} <Heart className="w-4 h-4 text-red-500 inline mx-1" /> {t('footer.inBahrain')}

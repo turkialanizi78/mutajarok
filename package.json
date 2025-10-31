@@ -1,11 +1,11 @@
 {
   "name": "codbh-nextjs",
   "version": "1.0.0",
-  "description": "CodeBH - منصة التجارة الإلكترونية مع ثيم مزدوج ودعم متعدد اللغات",
+  "description": "متاجركم - منصة التجارة الإلكترونية مع ثيم مزدوج ودعم متعدد اللغات",
   "private": true,
-  "author": "CodeBH Team",
+  "author": "متاجركم Team",
   "license": "MIT",
-  "homepage": "https://codebh.com",
+  "homepage": "https://mtajercom.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/YOUR_USERNAME/codbh-site.git"

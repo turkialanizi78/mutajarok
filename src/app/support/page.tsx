@@ -20,29 +20,29 @@ export default function SupportPage() {
       icon: Mail,
       title: t('support.contactMethods.email'),
       description: t('support.contactMethods.emailDesc'),
-      contact: 'support@codebh.com',
-      href: 'mailto:support@codebh.com',
+      contact: 'support@mtajercom.com',
+      href: 'mailto:support@mtajercom.com',
     },
     {
       icon: Users,
       title: t('support.contactMethods.merchants'),
       description: t('support.contactMethods.merchantsDesc'),
-      contact: 'merchants@codebh.com',
-      href: 'mailto:merchants@codebh.com',
+      contact: 'merchants@mtajercom.com',
+      href: 'mailto:merchants@mtajercom.com',
     },
     {
       icon: Bug,
       title: t('support.contactMethods.bugs'),
       description: t('support.contactMethods.bugsDesc'),
-      contact: 'bugs@codebh.com',
-      href: 'mailto:bugs@codebh.com',
+      contact: 'bugs@mtajercom.com',
+      href: 'mailto:bugs@mtajercom.com',
     },
     {
       icon: Lightbulb,
       title: t('support.contactMethods.suggestions'),
       description: t('support.contactMethods.suggestionsDesc'),
-      contact: 'suggestions@codebh.com',
-      href: 'mailto:suggestions@codebh.com',
+      contact: 'suggestions@mtajercom.com',
+      href: 'mailto:suggestions@mtajercom.com',
     },
   ]
 
@@ -206,7 +206,7 @@ export default function SupportPage() {
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">الدعم العام</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    نحن متاحون لمساعدتك في جميع استفساراتك العامة حول منصة CodeBH. 
+                    نحن متاحون لمساعدتك في جميع استفساراتك العامة حول منصة متاجركم. 
                     فريقنا المدرب جاهز للإجابة على أسئلتك وتقديم المساعدة اللازمة.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -361,7 +361,7 @@ export default function SupportPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:support@codebh.com"
+                href="mailto:support@mtajercom.com"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white text-green-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
               >
                 <Mail className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2" />

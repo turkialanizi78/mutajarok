@@ -435,14 +435,14 @@ export default function ProjectPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:investors@codebh.com"
+                href="mailto:investors@mtajercom.com"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
               >
                 <DollarSign className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2" />
                 {t('project.contactInvestors')}
               </a>
               <a
-                href="https://codebh.pages.dev/"
+                href="https://mtajercom.pages.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-400 transition-colors duration-200"

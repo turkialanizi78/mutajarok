@@ -52,7 +52,7 @@ export default function Header() {
               <span className="text-white font-bold text-lg">⚡</span>
             </div>
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
-              CodeBH
+              متاجركم
             </span>
           </Link>
 

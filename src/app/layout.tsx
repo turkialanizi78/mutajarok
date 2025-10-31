@@ -12,18 +12,18 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'CodeBH - منصتك الذكية للتجارة الإلكترونية',
+  title: 'متاجركم - منصتك الذكية للتجارة الإلكترونية',
   description: 'حل Smart White Label متكامل يربط التجار والعملاء في مكان واحد. ابدأ متجرك الإلكتروني اليوم بأدوات احترافية وسهلة الاستخدام',
-  keywords: 'تجارة إلكترونية، متجر إلكتروني، CodeBH، متجرك، Smart White Label',
-  authors: [{ name: 'CodeBH Team' }],
-  creator: 'CodeBH',
-  publisher: 'CodeBH',
+  keywords: 'تجارة إلكترونية، متجر إلكتروني، متاجركم، متجرك، Smart White Label',
+  authors: [{ name: 'متاجركم Team' }],
+  creator: 'متاجركم',
+  publisher: 'متاجركم',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://codebh.com'),
+  metadataBase: new URL('https://codebh.pages.dev/'),
   alternates: {
     canonical: '/',
     languages: {
@@ -32,16 +32,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'CodeBH - منصتك الذكية للتجارة الإلكترونية',
+    title: 'متاجركم - منصتك الذكية للتجارة الإلكترونية',
     description: 'حل Smart White Label متكامل يربط التجار والعملاء في مكان واحد',
-    url: 'https://codebh.com',
-    siteName: 'CodeBH',
+    url: 'https://codebh.pages.dev/',
+    siteName: 'متاجركم',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'CodeBH - منصتك الذكية للتجارة الإلكترونية',
+        alt: 'متاجركم - منصتك الذكية للتجارة الإلكترونية',
       },
     ],
     locale: 'ar_SA',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CodeBH - منصتك الذكية للتجارة الإلكترونية',
+    title: 'متاجركم - منصتك الذكية للتجارة الإلكترونية',
     description: 'حل Smart White Label متكامل يربط التجار والعملاء في مكان واحد',
     images: ['/og-image.jpg'],
   },
